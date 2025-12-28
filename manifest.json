@@ -1,0 +1,13 @@
+{
+  "domain": "epson_label",
+  "name": "Epson Label Printer",
+  "codeowners": [],
+  "config_flow": true,
+  "documentation": "https://github.com/python-escpos/python-escpos",
+  "iot_class": "local_push",
+  "issue_tracker": "",
+  "requirements": [
+    "python-escpos==3.1"
+  ],
+  "version": "1.0.0"
+}

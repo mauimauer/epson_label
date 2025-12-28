@@ -1,0 +1,55 @@
+print_label:
+  name: Print Label
+  description: Prints a label on the Epson printer.
+  target:
+    device:
+      integration: epson_label
+  fields:
+    text:
+      name: Text
+      description: The text to print.
+      required: true
+      selector:
+        text:
+    size:
+      name: Size
+      description: Text size magnitude (1-8).
+      required: false
+      default: 1
+      selector:
+        number:
+          min: 1
+          max: 8
+          mode: box
+    cut:
+      name: Cut
+      description: Cut paper after printing.
+      required: false
+      default: true
+      selector:
+        boolean:
+    feed_lines:
+      name: Feed Lines
+      description: Number of empty lines to feed before cutting.
+      required: false
+      default: 0
+      selector:
+        number:
+          min: 0
+          max: 20
+          mode: box
+
+print_label_extended:
+  name: Print Label (Extended)
+  description: Prints a label using advanced markup for barcodes, formatting, etc. See MARKUP.md.
+  target:
+    device:
+      integration: epson_label
+  fields:
+    text:
+      name: Markup Text
+      description: Text containing markup commands (e.g., $SIZE(2,2)Text).
+      required: true
+      selector:
+        text:
+          multiline: true
