@@ -47,10 +47,11 @@ class EpsonPrinterCoordinator(DataUpdateCoordinator):
                 data["online"] = True
                 
                 # Check paper status
-                # paper_status returns 0 if OK, other values if bits are set
-                # We consider any non-zero as a potential issue/paper out
+                # 2: Paper is adequate. 1: Paper ending. 0: No paper.
                 status = p.paper_status()
-                if status != 0:
+                if status == 2:
+                    data["paper_error"] = False
+                else:
                     data["paper_error"] = True
             else:
                  data["online"] = False
