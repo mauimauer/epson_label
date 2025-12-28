@@ -1,0 +1,21 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Verbinde mit Epson Etikettendrucker",
+                "description": "Gib die Netzwerkdetails deines Druckers ein.",
+                "data": {
+                    "host": "Host (IP-Adresse)",
+                    "port": "Port"
+                }
+            }
+        },
+        "error": {
+            "cannot_connect": "Verbindung fehlgeschlagen",
+            "unknown": "Unerwarteter Fehler"
+        },
+        "abort": {
+            "already_configured": "Gerät ist bereits konfiguriert"
+        }
+    }
+}
